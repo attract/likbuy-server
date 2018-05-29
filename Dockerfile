@@ -26,5 +26,6 @@ RUN docker-php-ext-configure gd \
 RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer && \
     composer self-update && \
+    composer global require "hirak/prestissimo:^0.3" && \
     apt-get remove --purge curl -y && \
     apt-get clean
