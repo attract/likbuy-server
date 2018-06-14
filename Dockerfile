@@ -12,7 +12,8 @@ RUN apt-get update && \
         libmcrypt-dev \
         libpng-dev \
         sendmail \
-        git -y
+        git -y \
+        curl
         # allow root for php-fpm
 
 # Some basic extensions
