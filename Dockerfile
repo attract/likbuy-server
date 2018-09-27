@@ -6,7 +6,7 @@ WORKDIR /tmp
 
 # Needs for composer
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends --no-install-suggests \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
@@ -14,7 +14,8 @@ RUN apt-get update && \
         sendmail \
         git -y \
         curl \
-        libmagickwand-dev --no-install-recommends && \
+        libmagickwand-dev \
+        supervisor && \
         rm -rf /var/lib/apt/lists/*
         # allow root for php-fpm
 
