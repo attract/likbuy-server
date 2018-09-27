@@ -13,8 +13,12 @@ RUN apt-get update && \
         libpng-dev \
         sendmail \
         git -y \
-        curl
+        curl \
+        libmagickwand-dev --no-install-recommends && \
+        rm -rf /var/lib/apt/lists/*
         # allow root for php-fpm
+
+RUN pecl install imagick && docker-php-ext-enable imagick
 
 # Some basic extensions
 RUN docker-php-ext-configure gd \
